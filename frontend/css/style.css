@@ -1,1 +1,147 @@
+/* ==================== GOOGLE FONTS ==================== */
+/* Estamos importando a fonte 'Poppins' do Google Fonts para usar no nosso projeto. */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
+/* ==================== VARIÁVEIS CSS ==================== */
+/* Definir variáveis no :root permite que usemos esses valores em qualquer lugar do nosso CSS.
+   Se quisermos mudar uma cor no site inteiro, só precisamos mudar aqui. */
+:root {
+    /* Cores */
+    --cor-primaria: #6A5ACD; /* Um tom de roxo/azul, nossa cor de destaque */
+    --cor-primaria-alt: #5A4FCF; /* Uma variação para efeitos de hover */
+    --cor-fundo: #121212; /* Fundo escuro, quase preto */
+    --cor-fundo-secundaria: #1E1E1E; /* Um tom um pouco mais claro para cards e seções */
+    --cor-texto: #E1E1E1; /* Cor principal do texto, um branco suave */
+    --cor-texto-claro: #A9A9A9; /* Cor para textos secundários e parágrafos */
+
+    /* Tipografia */
+    --fonte-principal: 'Poppins', sans-serif;
+    --tamanho-h1: 2.5rem; /* rem é uma unidade de medida relativa, boa para acessibilidade */
+    --tamanho-h2: 1.5rem;
+    --tamanho-normal: 1rem;
+}
+
+/* ==================== RESET E ESTILOS GLOBAIS ==================== */
+/* Um "reset" básico para remover estilos padrão dos navegadores. */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Faz com que padding e border não aumentem a largura final do elemento. */
+}
+
+html {
+    /* Habilita a rolagem suave ao clicar em links âncora (ex: <a href="#services">) */
+    scroll-behavior: smooth;
+}
+
+body {
+    /* Aplicando a fonte e as cores que definimos nas nossas variáveis. */
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto);
+}
+
+/* Remove o sublinhado padrão dos links e define a cor */
+a {
+    text-decoration: none;
+    color: var(--cor-texto);
+}
+
+/* Remove os marcadores de lista */
+ul {
+    list-style: none;
+}
+
+/* Classe utilitária para centralizar o conteúdo e dar um espaçamento lateral. */
+.container {
+    max-width: 1024px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 1.5rem;
+}
+
+/* Classe utilitária para títulos de seção. */
+.section-title {
+    font-size: var(--tamanho-h2);
+    color: var(--cor-primaria);
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+/* Classe utilitária para botões. */
+.button {
+    display: inline-block;
+    background-color: var(--cor-primaria);
+    color: #FFF;
+    padding: 1rem 2rem;
+    border-radius: 0.5rem;
+    font-weight: 500; /* Medium */
+    transition: background-color 0.3s;
+}
+
+.button:hover {
+    background-color: var(--cor-primaria-alt);
+}
+
+/* ==================== HEADER E NAVEGAÇÃO ==================== */
+.header {
+    /* Faz o cabeçalho ficar fixo no topo da página. */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: var(--cor-fundo);
+    z-index: 100; /* Garante que o header fique acima de outros conteúdos. */
+    padding: 1rem 0;
+    border-bottom: 1px solid #333; /* Uma linha sutil para separar do resto do conteúdo. */
+}
+
+.nav {
+    /* Usando Flexbox para alinhar os itens do menu. */
+    display: flex;
+    justify-content: space-between; /* Coloca o logo em um canto e o menu no outro. */
+    align-items: center;
+}
+
+.nav__logo {
+    font-weight: 700; /* Bold */
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+}
+
+.nav__list {
+    display: flex;
+    gap: 2rem; /* Cria um espaço entre os itens do menu. */
+}
+
+.nav__link {
+    transition: color 0.3s;
+}
+
+.nav__link:hover {
+    color: var(--cor-primaria);
+}
+
+/* ==================== SEÇÃO HERO ==================== */
+.hero-section {
+    /* Faz a seção ocupar 100% da altura da tela do dispositivo. */
+    height: 100vh;
+    /* Usando Flexbox para centralizar o conteúdo perfeitamente na vertical e horizontal. */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding-top: 5rem; /* Adiciona um espaço no topo para não ficar colado no header */
+}
+
+.hero-content h1 {
+    font-size: var(--tamanho-h1);
+    margin-bottom: 1rem;
+}
+
+.hero-content p {
+    font-size: var(--tamanho-normal);
+    color: var(--cor-texto-claro);
+    max-width: 600px; /* Impede que o parágrafo fique muito largo em telas grandes. */
+    margin: 0 auto 2rem auto;
+}

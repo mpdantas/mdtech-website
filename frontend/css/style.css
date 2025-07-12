@@ -145,3 +145,52 @@ ul {
     max-width: 600px; /* Impede que o parágrafo fique muito largo em telas grandes. */
     margin: 0 auto 2rem auto;
 }
+
+/* ==================== SEÇÃO DE SERVIÇOS ==================== */
+.services-section {
+    /* Adiciona um espaçamento interno no topo e na base da seção para 'respirar'. */
+    padding: 6rem 0;
+}
+
+.services-container {
+    /* Ativa o layout em Grid para este container. */
+    display: grid;
+    /* Define como as colunas do grid devem se comportar. Esta é a linha mais importante!
+       - repeat(auto-fit, ...): Cria colunas que se ajustam automaticamente à largura da tela.
+       - minmax(280px, 1fr): Cada coluna terá no MÍNIMO 280px. Se houver mais espaço, elas
+         dividirão o espaço restante igualmente (1fr). Em telas pequenas, as colunas
+         irão quebrar e ficar uma embaixo da outra automaticamente. */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    /* Define um espaçamento de 2rem entre cada card do grid. */
+    gap: 2rem;
+}
+
+.service-card {
+    /* Usando a cor de fundo secundária que definimos nas variáveis. */
+    background-color: var(--cor-fundo-secundaria);
+    /* Espaçamento interno do card. */
+    padding: 2rem;
+    /* Cantos arredondados. */
+    border-radius: 0.5rem;
+    /* Uma borda sutil para definir melhor os limites do card. */
+    border: 1px solid #333;
+    /* Prepara o card para uma transição suave em qualquer transformação. */
+    transition: transform 0.3s ease;
+}
+
+.service-card:hover {
+    /* Ao passar o mouse, o card se moverá 5 pixels para cima, criando um efeito de 'elevação'. */
+    transform: translateY(-5px);
+}
+
+.service-card h3 {
+    /* Espaçamento abaixo do título do card. */
+    margin-bottom: 1rem;
+    font-size: 1.25rem;
+    color: var(--cor-primaria);
+}
+
+.service-card p {
+    color: var(--cor-texto-claro);
+    line-height: 1.6; /* Melhora a legibilidade do texto do parágrafo. */
+}

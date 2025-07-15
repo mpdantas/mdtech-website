@@ -1,58 +1,46 @@
 /* ==================== GOOGLE FONTS ==================== */
-/* Estamos importando a fonte 'Poppins' do Google Fonts para usar no nosso projeto. */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 /* ==================== VARIÁVEIS CSS ==================== */
-/* Definir variáveis no :root permite que usemos esses valores em qualquer lugar do nosso CSS.
-   Se quisermos mudar uma cor no site inteiro, só precisamos mudar aqui. */
 :root {
-    /* Cores */
-    --cor-primaria: #6A5ACD; /* Um tom de roxo/azul, nossa cor de destaque */
-    --cor-primaria-alt: #5A4FCF; /* Uma variação para efeitos de hover */
-    --cor-fundo: #121212; /* Fundo escuro, quase preto */
-    --cor-fundo-secundaria: #1E1E1E; /* Um tom um pouco mais claro para cards e seções */
-    --cor-texto: #E1E1E1; /* Cor principal do texto, um branco suave */
-    --cor-texto-claro: #A9A9A9; /* Cor para textos secundários e parágrafos */
-
-    /* Tipografia */
+    --cor-primaria: #6A5ACD;
+    --cor-primaria-alt: #5A4FCF;
+    --cor-fundo: #121212;
+    --cor-fundo-secundaria: #1E1E1E;
+    --cor-texto: #E1E1E1;
+    --cor-texto-claro: #A9A9A9;
     --fonte-principal: 'Poppins', sans-serif;
-    --tamanho-h1: 2.5rem; /* rem é uma unidade de medida relativa, boa para acessibilidade */
+    --tamanho-h1: 3.5rem;
     --tamanho-h2: 1.5rem;
     --tamanho-normal: 1rem;
 }
 
 /* ==================== RESET E ESTILOS GLOBAIS ==================== */
-/* Um "reset" básico para remover estilos padrão dos navegadores. */
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Faz com que padding e border não aumentem a largura final do elemento. */
+    box-sizing: border-box;
 }
 
 html {
-    /* Habilita a rolagem suave ao clicar em links âncora (ex: <a href="#services">) */
     scroll-behavior: smooth;
 }
 
 body {
-    /* Aplicando a fonte e as cores que definimos nas nossas variáveis. */
     font-family: var(--fonte-principal);
     background-color: var(--cor-fundo);
     color: var(--cor-texto);
 }
 
-/* Remove o sublinhado padrão dos links e define a cor */
 a {
     text-decoration: none;
     color: var(--cor-texto);
 }
 
-/* Remove os marcadores de lista */
 ul {
     list-style: none;
 }
 
-/* Classe utilitária para centralizar o conteúdo e dar um espaçamento lateral. */
 .container {
     max-width: 1024px;
     margin-left: auto;
@@ -60,7 +48,6 @@ ul {
     padding: 0 1.5rem;
 }
 
-/* Classe utilitária para títulos de seção. */
 .section-title {
     font-size: var(--tamanho-h2);
     color: var(--cor-primaria);
@@ -68,50 +55,58 @@ ul {
     margin-bottom: 3rem;
 }
 
-/* Classe utilitária para botões. */
 .button {
     display: inline-block;
     background-color: var(--cor-primaria);
     color: #FFF;
     padding: 1rem 2rem;
     border-radius: 0.5rem;
-    font-weight: 500; /* Medium */
-    transition: background-color 0.3s;
+    font-weight: 500;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 .button:hover {
     background-color: var(--cor-primaria-alt);
 }
 
+.button--outline {
+    background-color: transparent;
+    border: 1px solid var(--cor-texto-claro);
+    color: var(--cor-texto-claro);
+}
+
+.button--outline:hover {
+    background-color: var(--cor-texto-claro);
+    color: var(--cor-fundo);
+}
+
 /* ==================== HEADER E NAVEGAÇÃO ==================== */
 .header {
-    /* Faz o cabeçalho ficar fixo no topo da página. */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     background-color: var(--cor-fundo);
-    z-index: 100; /* Garante que o header fique acima de outros conteúdos. */
+    z-index: 100;
     padding: 1rem 0;
-    border-bottom: 1px solid #333; /* Uma linha sutil para separar do resto do conteúdo. */
+    border-bottom: 1px solid #333;
 }
 
 .nav {
-    /* Usando Flexbox para alinhar os itens do menu. */
     display: flex;
-    justify-content: space-between; /* Coloca o logo em um canto e o menu no outro. */
+    justify-content: space-between;
     align-items: center;
 }
 
 .nav__logo {
-    font-weight: 700; /* Bold */
+    font-weight: 700;
     font-size: 1.5rem;
     color: var(--cor-primaria);
 }
 
 .nav__list {
     display: flex;
-    gap: 2rem; /* Cria um espaço entre os itens do menu. */
+    gap: 2rem;
 }
 
 .nav__link {
@@ -124,73 +119,288 @@ ul {
 
 /* ==================== SEÇÃO HERO ==================== */
 .hero-section {
-    /* Faz a seção ocupar 100% da altura da tela do dispositivo. */
     height: 100vh;
-    /* Usando Flexbox para centralizar o conteúdo perfeitamente na vertical e horizontal. */
     display: flex;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding-top: 5rem; /* Adiciona um espaço no topo para não ficar colado no header */
+    padding-top: 5rem;
+    position: relative;
+    background: radial-gradient(circle, #2a2a3e, var(--cor-fundo) 80%);
+}
+
+.hero-socials {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    z-index: 15;
+}
+
+.hero-socials a i {
+    font-size: 1.25rem;
+    color: var(--cor-texto-claro);
+    transition: color 0.3s, transform 0.3s;
+}
+
+.hero-socials a i:hover {
+    color: var(--cor-primaria);
+    transform: scale(1.2);
+}
+
+.hero-content {
+    position: relative;
+    z-index: 15;
 }
 
 .hero-content h1 {
     font-size: var(--tamanho-h1);
+    font-weight: 700;
+    text-transform: uppercase;
     margin-bottom: 1rem;
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }
 
 .hero-content p {
-    font-size: var(--tamanho-normal);
+    font-size: 1.2rem;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 2px;
+    margin: 0 auto;
+}
+
+/* ==================== SEÇÃO FEATURES ==================== */
+.features-section {
+    position: relative;
+    z-index: 10;
+    margin-top: -100px;
+    padding-bottom: 4rem; /* Espaçamento inferior adicionado */
+}
+
+.features-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.feature-card {
+    background-color: var(--cor-fundo-secundaria);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    text-align: center;
+    border: 1px solid #333;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+}
+
+.feature-card i {
+    font-size: 2.5rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1.5rem;
+}
+
+.feature-card h3 {
+    font-size: 1.25rem;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    color: var(--cor-texto);
+}
+
+.feature-card p {
     color: var(--cor-texto-claro);
-    max-width: 600px; /* Impede que o parágrafo fique muito largo em telas grandes. */
-    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+}
+
+/* ==================== SEÇÃO SOBRE NÓS ==================== */
+.about-section {
+    padding: 6rem 0;
+    background-color: var(--cor-fundo-secundaria);
+}
+
+.about-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 3rem;
+}
+
+.section-subtitle {
+    display: block;
+    color: var(--cor-primaria);
+    text-transform: uppercase;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+}
+
+.section-title-left {
+    font-size: var(--tamanho-h2);
+    margin-bottom: 1.5rem;
+    color: var(--cor-texto);
+    text-align: left;
+}
+
+.about-description {
+    color: var(--cor-texto-claro);
+    line-height: 1.7;
+    margin-bottom: 2rem;
+}
+
+.about-details {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.about-detail {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.about-detail i {
+    font-size: 1.5rem;
+    color: var(--cor-primaria);
+    margin-top: 0.25rem;
+}
+
+.about-detail h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+    color: var(--cor-texto);
+}
+
+.about-image-wrapper {
+    position: relative;
+}
+
+.about-image-wrapper img {
+    width: 100%;
+    height: auto;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.experience-badge {
+    position: absolute;
+    bottom: 20px;
+    right: -30px;
+    width: 140px;
+    height: 140px;
+    background-color: var(--cor-primaria);
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #FFF;
+    padding: 1rem;
+    border: 5px solid var(--cor-fundo-secundaria);
+}
+
+.experience-years {
+    font-size: 2.5rem;
+    font-weight: 700;
+    line-height: 1;
+}
+
+.experience-text {
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    font-weight: 500;
 }
 
 /* ==================== SEÇÃO DE SERVIÇOS ==================== */
 .services-section {
-    /* Adiciona um espaçamento interno no topo e na base da seção para 'respirar'. */
     padding: 6rem 0;
 }
 
+.services-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 2rem;
+    margin-bottom: 4rem;
+}
+
+.services-header-text p {
+    color: var(--cor-texto-claro);
+    line-height: 1.7;
+    max-width: 600px;
+}
+
 .services-container {
-    /* Ativa o layout em Grid para este container. */
     display: grid;
-    /* Define como as colunas do grid devem se comportar. Esta é a linha mais importante!
-       - repeat(auto-fit, ...): Cria colunas que se ajustam automaticamente à largura da tela.
-       - minmax(280px, 1fr): Cada coluna terá no MÍNIMO 280px. Se houver mais espaço, elas
-         dividirão o espaço restante igualmente (1fr). Em telas pequenas, as colunas
-         irão quebrar e ficar uma embaixo da outra automaticamente. */
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    /* Define um espaçamento de 2rem entre cada card do grid. */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
 }
 
 .service-card {
-    /* Usando a cor de fundo secundária que definimos nas variáveis. */
-    background-color: var(--cor-fundo-secundaria);
-    /* Espaçamento interno do card. */
-    padding: 2rem;
-    /* Cantos arredondados. */
-    border-radius: 0.5rem;
-    /* Uma borda sutil para definir melhor os limites do card. */
-    border: 1px solid #333;
-    /* Prepara o card para uma transição suave em qualquer transformação. */
+    background-color: var(--cor-primaria);
+    padding: 2.5rem 2rem;
+    border-radius: 1rem;
+    border: none;
     transition: transform 0.3s ease;
 }
 
 .service-card:hover {
-    /* Ao passar o mouse, o card se moverá 5 pixels para cima, criando um efeito de 'elevação'. */
-    transform: translateY(-5px);
+    transform: scale(1.03);
+}
+
+.service-card__icon {
+    width: 60px;
+    height: 60px;
+    background-color: rgba(0, 0, 0, 0.2);
+    border-radius: 0.5rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.service-card__icon i {
+    font-size: 1.75rem;
+    color: #FFF;
 }
 
 .service-card h3 {
-    /* Espaçamento abaixo do título do card. */
+    text-transform: uppercase;
     margin-bottom: 1rem;
     font-size: 1.25rem;
-    color: var(--cor-primaria);
+    color: #FFF;
 }
 
 .service-card p {
-    color: var(--cor-texto-claro);
-    line-height: 1.6; /* Melhora a legibilidade do texto do parágrafo. */
+    color: rgba(255, 255, 255, 0.8);
+    line-height: 1.6;
+}
+
+/* ==================== RESPONSIVIDADE ==================== */
+@media screen and (max-width: 992px) {
+    .about-container {
+        grid-template-columns: 1fr;
+    }
+    .about-image-wrapper {
+        grid-row: 1;
+        margin-bottom: 2rem;
+    }
+    .experience-badge {
+        width: 120px;
+        height: 120px;
+        right: 10px;
+    }
+
+    .services-header {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .services-header-action {
+        margin-top: 1.5rem;
+    }
 }

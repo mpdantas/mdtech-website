@@ -3,10 +3,10 @@
 
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
     <title>MDTech Engenharia - Soluções em Tecnologia</title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <link rel="stylesheet" href="css/style.css">
 
@@ -18,7 +18,6 @@
     <header class="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">MDTech</a>
-
             <div class="nav__menu">
                 <ul class="nav__list">
                     <li class="nav__item"><a href="#home" class="nav__link">Início</a></li>
@@ -33,27 +32,115 @@
     <main>
 
         <section class="hero-section" id="home">
+            <div class="hero-socials">
+                <a href="#" target="_blank" aria-label="Siga-nos no Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                <a href="#" target="_blank" aria-label="Siga-nos no Instagram"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#" target="_blank" aria-label="Siga-nos no LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+            </div>
             <div class="hero-content container">
-                <h1>Transformando Ideias em Soluções Digitais de Impacto</h1>
-                <p>Desenvolvemos software, websites e aplicativos que resolvem problemas reais e impulsionam o crescimento do seu negócio.</p>
-                <a href="#contact" class="button">Vamos Conversar</a>
+                <h1>Transformar Ideias em Realidade Digital</h1>
+                <p>Estamos aqui para te ajudar a construir!</p>
+            </div>
+        </section>
+
+        <section class="features-section">
+            <div class="features-container container">
+                <div class="feature-card">
+                    <i class="fa-solid fa-brain"></i>
+                    <h3>Soluções Sob Medida</h3>
+                    <p>Buscamos soluções para o seu negócio de acordo a sua necessidade, de forma eficiente e segura.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-lightbulb"></i>
+                    <h3>Inovação</h3>
+                    <p>Com uma equipe sempre em aprimoramento estamos sempre inovando com novas tecnologias e ideias.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fa-solid fa-ruler-combined"></i>
+                    <h3>Soluções Criativas</h3>
+                    <p>Encontramos solução para o seu problema e para sua necessidade de forma criativa.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-section" id="about">
+            <div class="about-container container">
+                <div class="about-content">
+                    <span class="section-subtitle">Sobre Nós</span>
+                    <h2 class="section-title-left">Transformamos Suas Ideias Em Realidade</h2>
+                    <p class="about-description">
+                        A MDTech Engenharia é uma empresa de tecnologia fundada em 2025, especializada no desenvolvimento de sites, aplicativos, softwares e sistemas sob demanda. Nossa paixão por inovação e excelência nos permite transformar soluções tecnológicas em ativos valiosos para nossos clientes, com foco em qualidade, confiabilidade e inovação contínua.
+                    </p>
+                    <div class="about-details">
+                        <div class="about-detail">
+                            <i class="fa-solid fa-bullseye"></i>
+                            <div class="about-detail-text">
+                                <h3>Missão</h3>
+                                <p>Aumentar a eficiência e os resultados dos nossos clientes por meio de soluções tecnológicas personalizadas e escaláveis, transformando ideias em produtos rentáveis.</p>
+                            </div>
+                        </div>
+                        <div class="about-detail">
+                            <i class="fa-solid fa-eye"></i>
+                            <div class="about-detail-text">
+                                <h3>Visão</h3>
+                                <p>Ser uma referência em tecnologia e inovação, criando produtos próprios e expandindo nossas operações em escala nacional e internacional.</p>
+                            </div>
+                        </div>
+                        <div class="about-detail">
+                            <i class="fa-solid fa-gem"></i>
+                            <div class="about-detail-text">
+                                <h3>Valores</h3>
+                                <p>Inovação, transparência, comprometimento, sustentabilidade e o foco em resultados.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="#contact" class="button">Contratar</a>
+                </div>
+                <div class="about-image-wrapper">
+                    <img src="https://images.pexels.com/photos/3769021/pexels-photo-3769021.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="Profissional da equipe MDTech sorrindo">
+                    <div class="experience-badge">
+                        <span class="experience-years">7+</span>
+                        <span class="experience-text">Anos de Experiência</span>
+                    </div>
+                </div>
             </div>
         </section>
 
         <section class="services-section" id="services">
-            <h2 class="section-title">Nossas Especialidades</h2>
-            <div class="services-container container">
-                <div class="service-card">
-                    <h3>Desenvolvimento Web</h3>
-                    <p>Criação de sites e sistemas web responsivos, rápidos e seguros, focados na experiência do usuário.</p>
+            <div class="container">
+                <div class="services-header">
+                    <div class="services-header-text">
+                        <span class="section-subtitle">Serviços</span>
+                        <h2 class="section-title-left">Quais Serviços Oferecemos</h2>
+                        <p>Na MDTech, somos especialistas em transformar ideias em realidade digital. Oferecemos soluções de desenvolvimento de aplicativos, sites e sistemas sob medida para afender às suas necessidades.</p>
+                    </div>
+                    <div class="services-header-action">
+                        <a href="#contact" class="button button--outline">Fale Conosco</a>
+                    </div>
                 </div>
-                <div class="service-card">
-                    <h3>Aplicativos Mobile</h3>
-                    <p>Desenvolvemos aplicativos nativos e híbridos para iOS e Android, da concepção ao lançamento.</p>
-                </div>
-                <div class="service-card">
-                    <h3>Consultoria em TI</h3>
-                    <p>Analisamos sua infraestrutura e processos para otimizar seus recursos tecnológicos.</p>
+
+                <div class="services-container">
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fa-solid fa-code"></i>
+                        </div>
+                        <h3>Desenvolvimento de Sites</h3>
+                        <p>Crie uma presença online única e impactante com nossos serviços especializados em desenvolvimento de sites. Do design intuitivo à funcionalidade avançada, oferecemos soluções personalizadas.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fa-solid fa-cart-shopping"></i>
+                        </div>
+                        <h3>E-commerce Personalizado</h3>
+                        <p>Transforme visitantes em clientes com seu próprio e-commerce. Desenvolvemos em plataformas seguras e fáceis de usar, proporcionando uma experiência de compra online excepcional e um controle total da sua loja.</p>
+                    </div>
+                    <div class="service-card">
+                        <div class="service-card__icon">
+                            <i class="fa-solid fa-mobile-screen-button"></i>
+                        </div>
+                        <h3>Aplicativos Inovadores</h3>
+                        <p>Do conceito à implementação, criamos aplicativos sob medida. Seja para iOS, Android ou ambas as plataformas, entregamos soluções inovadoras que impulsionam o sucesso do seu negócio.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -84,13 +171,12 @@
                 </form>
             </div>
         </section>
-
     </main>
 
     <footer class="footer">
         <div class="footer-container container">
             <p>&copy; 2025 MDTech Engenharia. Todos os direitos reservados.</p>
-            </div>
+        </div>
     </footer>
 
 </body>

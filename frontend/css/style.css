@@ -434,6 +434,66 @@ ul {
     }
 }
 
+/* ==================== RESPONSIVIDADE (continuação) ==================== */
+@media screen and (max-width: 992px) {
+    /* ... regras existentes para .about-container, etc. ... */
+
+    /* Estilos para o menu mobile */
+    .nav__menu {
+        position: fixed; /* Fica fixo na tela */
+        top: 0;
+        /* Começa escondido fora da tela, à direita */
+        right: -100%;
+        width: 70%; /* Ocupa 70% da largura da tela */
+        height: 100%;
+        background-color: var(--cor-fundo-secundaria);
+        padding: 4rem 2rem 0;
+        z-index: 200; /* Z-index alto para ficar sobre todo o conteúdo */
+        transition: right 0.4s ease-in-out;
+        border-left: 1px solid #444;
+    }
+
+    /* Modificador que o JavaScript vai adicionar para mostrar o menu */
+    .show-menu {
+        right: 0; /* Move o menu para dentro da tela */
+    }
+
+    .nav__list {
+        /* Organiza os links em uma coluna */
+        flex-direction: column;
+        gap: 2rem;
+    }
+
+    /* O ícone de fechar (X) fica visível no menu mobile */
+    .nav__close {
+        position: absolute;
+        top: 1.25rem;
+        right: 1.5rem;
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* O ícone de 'hambúrguer' só aparece em telas menores */
+    .nav__toggle {
+        display: block; /* Torna o ícone visível */
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+
+    /* A lista de links horizontal é escondida */
+    .header .nav__list {
+        /* Esta regra sobrescreve a original para o mobile */
+        display: flex;
+        flex-direction: column;
+    }
+}
+
+/* Esconde o toggle e o close em telas grandes */
+.nav__toggle,
+.nav__close {
+    display: none;
+}
+
 /* ==================== SEÇÃO PORTFÓLIO ==================== */
 .portfolio-section {
     padding: 6rem 0;
@@ -526,4 +586,90 @@ ul {
 .portfolio-card:hover .portfolio-link i {
     opacity: 1;
     transform: translateX(0);
+}
+
+/* ==================== RODAPÉ (FOOTER) - VERSÃO CORRIGIDA (TEMA ESCURO) ==================== */
+.footer {
+    /* Retornando ao tema escuro para consistência */
+    background-color: var(--cor-fundo); 
+    color: var(--cor-texto-claro); /* Usando a cor de texto claro padrão */
+    padding: 4rem 0 0 0;
+    border-top: 1px solid #333; /* Borda escura sutil */
+}
+
+.footer-container {
+    /* A REGRA MAIS IMPORTANTE: Ativa o layout em grid */
+    display: grid;
+    /* Cria colunas responsivas */
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 2rem;
+    padding-bottom: 3rem;
+}
+
+.footer__logo {
+    display: inline-block;
+    font-weight: 700;
+    font-size: 1.75rem;
+    color: var(--cor-primaria);
+    margin-bottom: 1rem;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 1rem;
+}
+
+.footer-socials a i {
+    font-size: 1.25rem;
+    color: var(--cor-texto-claro);
+    transition: color 0.3s;
+}
+
+.footer-socials a i:hover {
+    color: var(--cor-primaria);
+}
+
+.footer-title {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    color: var(--cor-texto); /* Título com mais destaque */
+}
+
+.footer-contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--cor-texto-claro);
+}
+
+.footer-contact-item i {
+    margin-top: 4px;
+    color: var(--cor-primaria);
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.footer-links a {
+    color: var(--cor-texto-claro);
+    transition: color 0.3s;
+}
+
+.footer-links a:hover {
+    color: var(--cor-primaria);
+}
+
+.footer-bottom {
+    padding: 1.5rem 0;
+    text-align: center;
+    border-top: 1px solid #333;
+    font-size: 0.9rem;
+    color: var(--cor-texto-claro);
 }

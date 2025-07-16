@@ -673,3 +673,25 @@ ul {
     font-size: 0.9rem;
     color: var(--cor-texto-claro);
 }
+
+/* ==================== AJUSTES NO LOGO ==================== */
+
+/* Remove os estilos de texto dos links do logo */
+.nav__logo,
+.footer__logo {
+    font-size: 0; /* Remove qualquer tamanho de fonte herdado */
+}
+
+/* Define o tamanho da imagem do logo no cabeçalho */
+.nav__logo img {
+    height: 60px; /* Altura desejada para o logo no topo */
+    width: auto;  /* A largura se ajustará automaticamente para manter a proporção */
+    display: block; /* Remove espaços extras que a tag img pode ter */
+}
+
+/* Define o tamanho da imagem do logo no rodapé */
+.footer__logo img {
+    height: 50px; /* Um pouco maior no rodapé para mais destaque */
+    width: auto;
+    display: block;
+}

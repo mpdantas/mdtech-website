@@ -178,7 +178,7 @@ ul {
     position: relative;
     z-index: 10;
     margin-top: -100px;
-    padding-bottom: 4rem; /* Espaçamento inferior adicionado */
+    padding-bottom: 4rem;
 }
 
 .features-container {
@@ -340,7 +340,10 @@ ul {
 }
 
 .service-card {
-    background-color: var(--cor-primaria);
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    overflow: hidden;
     padding: 2.5rem 2rem;
     border-radius: 1rem;
     border: none;
@@ -349,6 +352,30 @@ ul {
 
 .service-card:hover {
     transform: scale(1.03);
+}
+
+/* Card 1: Desenvolvimento de Sites */
+.service-card:nth-of-type(1) {
+    background-image:
+        linear-gradient(to top, rgba(106, 90, 205, 0.95), rgba(106, 90, 205, 0.8)),
+        /* ATENÇÃO: Substitua 'servico-sites.jpg' pelo nome do seu arquivo de imagem */
+        url(../assets/images/desenvolvimento.jpg);
+}
+
+/* Card 2: E-commerce Personalizado */
+.service-card:nth-of-type(2) {
+    background-image:
+        linear-gradient(to top, rgba(106, 90, 205, 0.95), rgba(106, 90, 205, 0.8)),
+        /* ATENÇÃO: Substitua 'servico-ecommerce.jpg' pelo nome do seu arquivo de imagem */
+        url(../assets/images/ecomerce.jpg);
+}
+
+/* Card 3: Aplicativos Inovadores */
+.service-card:nth-of-type(3) {
+    background-image:
+        linear-gradient(to top, rgba(106, 90, 205, 0.95), rgba(106, 90, 205, 0.8)),
+        /* ATENÇÃO: Substitua 'servico-apps.jpg' pelo nome do seu arquivo de imagem */
+        url(../assets/images/seguranca-da-informação.jpg);
 }
 
 .service-card__icon {
@@ -372,11 +399,13 @@ ul {
     margin-bottom: 1rem;
     font-size: 1.25rem;
     color: #FFF;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 .service-card p {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     line-height: 1.6;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
 }
 
 /* ==================== RESPONSIVIDADE ==================== */
@@ -403,4 +432,98 @@ ul {
     .services-header-action {
         margin-top: 1.5rem;
     }
+}
+
+/* ==================== SEÇÃO PORTFÓLIO ==================== */
+.portfolio-section {
+    padding: 6rem 0;
+}
+
+.portfolio-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.portfolio-card {
+    position: relative; /* Essencial para posicionar o conteúdo e o overlay */
+    min-height: 350px;
+    border-radius: 1rem;
+    overflow: hidden; /* Garante que a imagem e o overlay fiquem dentro dos cantos arredondados */
+    
+    /* Propriedades base para a imagem de fundo */
+    background-size: cover;
+    background-position: center;
+
+    display: flex; /* Para alinhar o conteúdo do link */
+    transition: transform 0.3s ease;
+}
+
+.portfolio-card:hover {
+    transform: translateY(-5px);
+}
+
+/* --- Imagens de Fundo para cada Card --- */
+/* ATENÇÃO: Substitua as URLs abaixo pelas imagens dos seus projetos */
+.portfolio-card:nth-of-type(1) {
+    background-image: url(https://images.unsplash.com/photo-1579684385127-1ef15d508118?q=80&w=1780&auto=format&fit=crop);
+}
+.portfolio-card:nth-of-type(2) {
+    background-image: url(https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1887&auto=format&fit=crop);
+}
+.portfolio-card:nth-of-type(3) {
+    background-image: url(https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop);
+}
+
+
+/* --- Overlay e Conteúdo --- */
+/* O pseudo-elemento ::before cria a camada de sobreposição de cor */
+.portfolio-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradiente escuro para garantir a legibilidade do texto */
+    background: linear-gradient(to top, rgba(0,0,0,0.8), rgba(0,0,0,0.1));
+    transition: background-color 0.3s ease;
+}
+
+/* Ao passar o mouse, o overlay fica com a nossa cor primária */
+.portfolio-card:hover::before {
+    background: linear-gradient(to top, rgba(106, 90, 205, 0.8), rgba(106, 90, 205, 0.3));
+}
+
+/* O link que contém o título e o ícone */
+.portfolio-link {
+    /* Faz o link preencher todo o card */
+    position: relative; 
+    z-index: 2; /* Garante que o conteúdo fique ACIMA do overlay ::before */
+    width: 100%;
+    padding: 1.5rem;
+    
+    /* Alinha o conteúdo na base do card */
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.portfolio-link h4 {
+    font-size: 1.25rem;
+    color: #FFF;
+}
+
+.portfolio-link i {
+    font-size: 1.5rem;
+    color: #FFF;
+    opacity: 0; /* O ícone começa invisível */
+    transform: translateX(-10px); /* Começa um pouco para a esquerda */
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+/* O ícone aparece suavemente ao passar o mouse sobre o card */
+.portfolio-card:hover .portfolio-link i {
+    opacity: 1;
+    transform: translateX(0);
 }

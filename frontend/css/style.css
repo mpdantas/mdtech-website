@@ -529,10 +529,10 @@ ul {
     background-image: url(../assets/images/sistema-gestao.jpg);
 }
 .portfolio-card:nth-of-type(2) {
-    background-image: url(https://images.unsplash.com/photo-1524638431109-93d95c968f03?q=80&w=1887&auto=format&fit=crop);
+    background-image: url(../assets/images/suporte.png);
 }
 .portfolio-card:nth-of-type(3) {
-    background-image: url(https://images.unsplash.com/photo-1551650975-87deedd944c3?q=80&w=1974&auto=format&fit=crop);
+    background-image: url(../assets/images/vulnerabilidades.jpg);
 }
 
 

@@ -5,12 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MDTech Engenharia - Soluções em Tecnologia</title>
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <link rel="stylesheet" href="css/style.css">
+
     <script src="js/script.js" defer></script>
 </head>
 
 <body>
+
     <header class="header">
         <nav class="nav container">
             <a href="#" class="nav__logo">
@@ -35,6 +41,7 @@
     </header>
 
     <main>
+
         <section class="hero-section" id="home">
             <div class="hero-socials">
                 <a href="#" target="_blank" aria-label="Siga-nos no Facebook"><i class="fa-brands fa-facebook-f"></i></a>
@@ -47,7 +54,7 @@
             </div>
         </section>
 
-        <section class="features-section">
+        <section class="features-section" data-aos="fade-up">
             <div class="features-container container">
                 <div class="feature-card">
                     <i class="fa-solid fa-brain"></i>
@@ -67,7 +74,7 @@
             </div>
         </section>
 
-        <section class="about-section" id="about">
+        <section class="about-section" id="about" data-aos="fade-up">
             <div class="about-container container">
                 <div class="about-content">
                     <span class="section-subtitle">Sobre Nós</span>
@@ -110,7 +117,7 @@
             </div>
         </section>
 
-        <section class="services-section" id="services">
+        <section class="services-section" id="services" data-aos="fade-up">
             <div class="container">
                 <div class="services-header">
                     <div class="services-header-text">
@@ -130,40 +137,41 @@
                     </div>
                     <div class="service-card">
                         <div class="service-card__icon"><i class="fa-solid fa-cart-shopping"></i></div>
-                        <h3>E-commerce Personalizado</h3>
-                        <p>Transforme visitantes em clientes com seu próprio e-commerce. Desenvolvemos em plataformas seguras e fáceis de usar, proporcionando uma experiência de compra online excepcional e um controle total da sua loja.</p>
+                        <h3>Landing Page</h3>
+                        <p>Direcione seus visitantes para a ação que realmente importa. Criamos landing pages rápidas, responsivas e visualmente impactantes, focadas em converter seu tráfego em oportunidades de negócio concretas.</p>
                     </div>
                     <div class="service-card">
                         <div class="service-card__icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
                         <h3>Segurança Cibernética</h3>
-                        <p>Do conceito à implementação, criamos aplicativos sob medida. Seja para iOS, Android ou ambas as plataformas, entregamos soluções inovadoras que impulsionam o sucesso do seu negócio.</p>
+                        <p>Antecipe, detecte e responda às ameaças antes que elas impactem seu negócio. Realizamos análises completas de vulnerabilidade, testes de invasão (pentest) e adequação a normas como a LGPD, garantindo que sua empresa não apenas se defenda, mas opere com resiliência e segurança.</p>
                     </div>
                 </div>
             </div>
         </section>
 
-        <section class="portfolio-section" id="portfolio">
+        <section class="portfolio-section" id="portfolio" data-aos="fade-up">
             <div class="portfolio-container container">
                 <div class="portfolio-card">
                     <a href="#" class="portfolio-link">
-                        <h4>Sistema de Gestão para Corretores de Seguros</h4>
+                        <h4>Sistema de Gestão para Corretoras de Seguros</h4>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
                 <div class="portfolio-card">
                     <a href="#" class="portfolio-link">
-                        <h4>E-commerce de Moda Sustentável</h4>
+                        <h4>Suporte Técnico</h4>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
                 <div class="portfolio-card">
                     <a href="#" class="portfolio-link">
-                        <h4>App de Delivery Local</h4>
+                        <h4>Análise de Vulnerabilidades</h4>
                         <i class="fa-solid fa-arrow-right"></i>
                     </a>
                 </div>
             </div>
         </section>
+
     </main>
 
     <footer class="footer" id="contact">
@@ -211,5 +219,13 @@
             <p>&copy; 2025 MDTech Engenharia. Todos os direitos reservados.</p>
         </div>
     </footer>
+
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+          duration: 1000, // Duração da animação em milissegundos
+          once: true,    // A animação acontece apenas uma vez
+      });
+    </script>
 </body>
 </html>

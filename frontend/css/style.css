@@ -219,7 +219,9 @@ ul {
 /* ==================== SEÇÃO SOBRE NÓS ==================== */
 .about-section {
     padding: 6rem 0;
-    background-color: var(--cor-fundo-secundaria);
+    background-image:
+        linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
+        url(../assets/images/sobre-nos.jpg);
 }
 
 .about-container {

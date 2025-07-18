@@ -126,7 +126,9 @@ ul {
     text-align: center;
     padding-top: 5rem;
     position: relative;
-    background: radial-gradient(circle, #2a2a3e, var(--cor-fundo) 80%);
+    background-image: 
+        linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)),
+        url(../assets/images/teconologia.jpg);
 }
 
 .hero-socials {
